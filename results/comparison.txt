@@ -1,48 +1,49 @@
-                                         real           bigpemu        vj-develop          vj-fixed
-version / boot count                    2 / 3             2 / 1             2 / 1             2 / 1
-stage (255 = finished)                      7               255               255               255
-checksum                     BAD (FFB1 vs 0000)                ok                ok                ok
-EEPROM write failures                       0                 0                 0                 0
-CONFIG raw                        FF7F (NTSC)       FFFF (NTSC)       FF7F (NTSC)       FF7F (NTSC)
-VC max (half-lines)                       523               524               524               524
-HC max                                    844               843              1023              1023
-timer changed in 1000 reads              1000              1000                 0              1000
-frame period (ticks)                   221305            221759                 0            221760
-  spread over 16 frames                  2271              1485                 0              1572
-blit fill 320x100 (ticks)                6565             10948                 0               996
-blit copy 320x100 (ticks)               26424             30788                 0               842
-blit fill, 2-bitmap OP load              5591             10949                 0               996
-late threshold (ticks)                   1215              1246             65535              1248
-[no bitmap]                                                                                        
-  68K loops/frame                           0              5020              5228              5019
-  I2S irqs/frame                        266.6             267.5            1116.3             266.6
-  period min/max                    722 / 928         831 / 834             0 / 0         832 / 832
-  late periods                              0                 0                 0                 0
-  8 DRAM loads max/avg               176 / 69           32 / 32             0 / 0           24 / 24
-[1 bitmap]                                                                                         
-  68K loops/frame                           0              5020              5228              5019
-  I2S irqs/frame                        266.6             267.5            1116.3             266.6
-  period min/max                    722 / 928         831 / 834             0 / 0         832 / 832
-  late periods                              0                 0                 0                 0
-  8 DRAM loads max/avg               176 / 69           32 / 32             0 / 0           24 / 24
-[2 bitmaps]                                                                                        
-  68K loops/frame                           0              5020              5228              5019
-  I2S irqs/frame                        266.6             267.5            1116.3             266.6
-  period min/max                    722 / 928         831 / 834             0 / 0         832 / 832
-  late periods                              0                 0                 0                 0
-  8 DRAM loads max/avg               176 / 69           32 / 32             0 / 0           24 / 24
-[3 bitmaps]                                                                                        
-  68K loops/frame                           0              5020              5228              5019
-  I2S irqs/frame                        266.6             267.5            1116.3             266.6
-  period min/max                    722 / 928         831 / 834             0 / 0         832 / 832
-  late periods                              0                 0                 0                 0
-  8 DRAM loads max/avg               176 / 69           32 / 32             0 / 0           24 / 24
-[blitter]                                                                                          
-  fills in 16 frames                      299               170              3584              3514
-  I2S irqs/frame                        266.6             267.5            1116.3             266.6
-  period min/max                    722 / 928         831 / 834             0 / 0         832 / 832
-  late periods                              0                 0                 0                 0
-  8 DRAM loads max/avg               176 / 69           32 / 32             0 / 0           24 / 24
-frame rate (2 clocks/tick)           60.08 Hz          59.95 Hz                 -          59.95 Hz
-I2S sample rate                      15986 Hz          15984 Hz                 -          15984 Hz
-period avg (ticks)                        832               832                 -               832
+                                         real           bigpemu        vj-develop          vj-fixed          libretro      libretro-acc
+version / boot count                    2 / 3             2 / 1             2 / 1             2 / 1             2 / 1             2 / 1
+stage (255 = finished)                      7               255               255               255               255               255
+checksum                     BAD (FFB1 vs 0000)                ok                ok                ok                ok                ok
+EEPROM write failures                       0                 0                 0                 0                 0                 0
+CONFIG raw                        FF7F (NTSC)       FFFF (NTSC)       FF7F (NTSC)       FF7F (NTSC)       FF7F (NTSC)       FF7F (NTSC)
+VC max (half-lines)                       523               524               524               524               523               523
+HC max                                    844               843              1023              1023               843               843
+timer changed in 1000 reads              1000              1000                 0              1000                 0                 0
+frame period (ticks)                   221305            221759                 0            221760                 0                 0
+  spread over 16 frames                  2271              1485                 0              1572                 0                 0
+blit fill 320x100 (ticks)                6565             10948                 0               996                 0                 0
+blit copy 320x100 (ticks)               26424             30788                 0               842                 0                 0
+blit fill, 2-bitmap OP load              5591             10949                 0               996                 0                 0
+late threshold (ticks)                   1215              1246             65535              1248             65535             65535
+[no bitmap]                                                                                                                            
+  68K loops/frame                        3389              5028              5237              5027              5249              5222
+  I2S irqs/frame                        266.1             266.6             217.1             266.6             266.1             266.1
+  period min/max                    810 / 853         830 / 834             0 / 0         832 / 832             0 / 0             0 / 0
+  late periods                              0                 0                 0                 0                 0                 0
+  8 DRAM loads max/avg                91 / 70           32 / 32             0 / 0           24 / 24             0 / 0             0 / 0
+[1 bitmap]                                                                                                                             
+  68K loops/frame                        3090              5025              5234              5024              5246              4993
+  I2S irqs/frame                        266.1             266.6             220.2             266.6             266.1             266.1
+  period min/max                    725 / 932         831 / 834             0 / 0         832 / 832             0 / 0             0 / 0
+  late periods                              0                 0                 0                 0                 0                 0
+  8 DRAM loads max/avg               176 / 76           32 / 32             0 / 0           24 / 24             0 / 0             0 / 0
+[2 bitmaps]                                                                                                                            
+  68K loops/frame                        2786              5022              5231              5021              5244              4761
+  I2S irqs/frame                        266.1             266.6             225.7             266.6             266.1             266.1
+  period min/max                   639 / 1013         830 / 834             0 / 0         832 / 832             0 / 0             0 / 0
+  late periods                              0                 0                 0                 0                 0                 0
+  8 DRAM loads max/avg               262 / 82           32 / 32             0 / 0           24 / 24             0 / 0             0 / 0
+[3 bitmaps]                                                                                                                            
+  68K loops/frame                           0              5020              5228              5019              5241              4538
+  I2S irqs/frame                          0.0             266.6             216.4             266.6             266.1             266.1
+  period min/max                        0 / 0         830 / 834             0 / 0         832 / 832             0 / 0             0 / 0
+  late periods                              0                 0                 0                 0                 0                 0
+  8 DRAM loads max/avg                  0 / 0           32 / 32             0 / 0           24 / 24             0 / 0             0 / 0
+[blitter]                                                                                                                              
+  fills in 16 frames                      299               170              3584              3514              3738               670
+  I2S irqs/frame                        266.6             267.5            1116.3             266.6             266.1             266.3
+  period min/max                    722 / 928         831 / 834             0 / 0         832 / 832             0 / 0             0 / 0
+  late periods                              0                 0                 0                 0                 0                 0
+  8 DRAM loads max/avg               176 / 69           32 / 32             0 / 0           24 / 24             0 / 0             0 / 0
+[derived]                                                                       -                                   -                 -
+frame rate (2 clocks/tick)           60.08 Hz          59.95 Hz                 -          59.95 Hz                 -                 -
+I2S sample rate                      15986 Hz          15984 Hz                 -          15984 Hz                 -                 -
+period avg (ticks)                        832               832                 -               832                 -                 -

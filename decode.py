@@ -28,7 +28,12 @@ def words(path):
 
 def rows(w):
     r = []
-    add = lambda k, v: r.append((k, v))
+    sec = [""]                     # rows repeat per load, so key on (section, label)
+
+    def add(k, v):
+        if k.startswith("["):
+            sec[0] = k
+        r.append(((sec[0], k), v))
     ck = sum(w[:63]) & 0xFFFF
     add("version / boot count", f"{w[1]} / {w[2]}")
     add("stage (255 = finished)", w[3])
@@ -58,6 +63,7 @@ def rows(w):
     irq = w[16 + 8 + 1] / (w[16 + 8 + 7] or 1)
     if irq and fp:
         hz = CLK / (2 * fp)               # 2 clocks per timer tick
+        add("[derived]", "")
         add("frame rate (2 clocks/tick)", f"{hz:.2f} Hz")
         add("I2S sample rate", f"{irq * hz:.0f} Hz")
         add("period avg (ticks)", f"{fp / irq:.0f}")
@@ -75,10 +81,10 @@ def main():
     for _, r in cols:
         keys += [k for k, _ in r if k not in keys]
     vals = [dict(r) for _, r in cols]
-    kw = max(len(k) for k in keys)
+    kw = max(len(k[1]) for k in keys)
     print(" " * kw + "".join(f"  {c[0]:>16}" for c in cols))
     for k in keys:
-        print(f"{k:<{kw}}" + "".join(f"  {str(v.get(k, '-')):>16}" for v in vals))
+        print(f"{k[1]:<{kw}}" + "".join(f"  {str(v.get(k, '-')):>16}" for v in vals))
 
 
 if __name__ == "__main__":

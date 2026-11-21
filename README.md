@@ -44,7 +44,8 @@ Time base: Jerry timer 2, prescaler 1 (2 system clocks per tick, ~75 ns), divide
 - **real Jaguar:** a JagGD save;
 - **BigPEmu;**
 - **Virtual Jaguar Rx develop** at 9321810;
-- **Virtual Jaguar with the timing fixes** from [slaapliedje/Virtual-Jaguar-Rx](https://github.com/slaapliedje/Virtual-Jaguar-Rx) (branch `etjag`).
+- **Virtual Jaguar with the timing fixes** from [slaapliedje/Virtual-Jaguar-Rx](https://github.com/slaapliedje/Virtual-Jaguar-Rx) (branch `etjag`);
+- **libretro Virtual Jaguar 3.13.1**, with default options and with its accuracy options on (`dram_timing`, `gpu_pipeline_timing`, `blitter_timing`, and `risc_idle_skip` off). Its JERRY timers don't read back, so every timer-based result there is 0.
 
 On the real Jaguar, the run stops at stage 7. Three stacked full-width 8bpp bitmaps are more than the Object Processor can fetch per line, so it never reaches STOP and starves the 68K. That's why that save has no 3-bitmap results and its checksum isn't written. Two bitmaps run fine. No emulator tested models this limit.
 
